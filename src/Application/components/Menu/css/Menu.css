@@ -1,0 +1,33 @@
+.menu {
+  width: 10vw;
+  font-size: 1rem;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 20px;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu a {
+  color: #929292;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: none;
+  color: #efefef;
+}
+
+.menu a.active {
+  color: #fff;
+}
+
+.menu a.active:hover {
+  color: #fff;
+}

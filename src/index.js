@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import MainLayout from './Application/components/Layout/MainLayout';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <main>
-    <App />
+    <MainLayout />
   </main>,
 document.getElementById('root'));
 
