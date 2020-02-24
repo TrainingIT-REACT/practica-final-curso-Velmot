@@ -8,7 +8,7 @@ const SearchPage = ({ match }) => {
       //Fake fetch with delay
       await setTimeout(
         () =>
-          fetch(`/songs?name=${match.params.query}`)
+          fetch(`/songs?name_like=${match.params.query}`)
             .then(res => res.json())
             .then(setSongs)
             .catch(err => console.error("Error accediendo al servidor", err)),
@@ -16,7 +16,7 @@ const SearchPage = ({ match }) => {
       );
     };
     fetchSongs();
-  }, [false]);
+  }, [match.params.query]);
   return (
     <div>
       <SongList data={songs} mode="cover" />
