@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import cn from "classnames";
 import _ from "lodash";
 import { compose, map, pick } from "ramda";
@@ -7,6 +7,8 @@ import { NavLink } from "react-router-dom";
 import "../css/Cover.css";
 
 const Cover = ({ data = [], columns = 5, className = "" }) => {
+  const [containerWidth, setContainerWidth] = useState(0);
+  const divRef = useRef();
   const [albums, setAlbums] = useState([]);
   useEffect(() => {
     const getCover = async ids =>
@@ -15,14 +17,23 @@ const Cover = ({ data = [], columns = 5, className = "" }) => {
           .json()
           .then(compose(setAlbums, map(pick(["id", "artist", "cover"]))))
       );
-
     if (data.length) {
       const ids = data.map(s => s.album_id);
       getCover(Array.from(new Set(ids)));
     }
   }, [data]);
+  useEffect(
+    e => {
+      console.log(e);
+      divRef.current.offsetWidth &&
+        setContainerWidth(divRef.current.offsetWidth);
+    },
+    [containerWidth]
+  );
+  const width = Math.floor(containerWidth / columns);
   return (
     <div
+      ref={divRef}
       className={cn("song-list-cover", { [className]: className })}
       style={{
         gridTemplateColumns: _.range(columns)
@@ -39,8 +50,8 @@ const Cover = ({ data = [], columns = 5, className = "" }) => {
               [`${className}-cover__item`]: className
             })}
             style={{
-              width: `${Math.floor(100 / columns)}%`,
-              height: `${Math.floor(100 / columns)}%`
+              width: `${width}px`,
+              height: `${width}px`
             }}
           >
             <div

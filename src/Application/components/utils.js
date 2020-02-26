@@ -7,5 +7,5 @@ export const renameKeys = curry((keysMap, obj) =>
 export const formatSongDuration = seconds => {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = Math.floor(seconds % 60);
-  return `${minutes}:${remainingSeconds}`;
+  return `${minutes}:${remainingSeconds === 0 ? "00" : remainingSeconds}`;
 };

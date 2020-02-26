@@ -1,0 +1,29 @@
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #b3b3b3;
+}
+
+.timer__bar {
+  height: 4px;
+  background: #404040;
+}
+
+.timer__progress {
+  height: 100%;
+  background: #b3b3b3;
+}
+
+.timer__bar,
+.timer__progress {
+  border-radius: 2px;
+}
+
+.timer__time {
+  margin-right: 5px;
+}
+
+.timer__duration {
+  margin-left: 5px;
+}

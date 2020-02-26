@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import Login, { UserContext, UserBox } from "../Login";
 import ContentWrapper from "../ContentWrapper";
 import Player from "../../../Player";
 import Menu from "../Menu";
-import SearchBox from '../Search'
+import SearchBox from "../Search";
 
 import "./css/MainLayout.css";
 
@@ -19,7 +20,10 @@ const MainLayout = () => (
           <Menu />
         </div>
         <div className="content">
-          <SearchBox />
+          <div className="header">
+            <SearchBox />
+            <UserBox />
+          </div>
           <ContentWrapper />
         </div>
       </div>

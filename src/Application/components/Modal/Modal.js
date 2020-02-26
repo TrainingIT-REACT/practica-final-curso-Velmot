@@ -1,30 +1,39 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
+import "./css/Modal.css";
+
 const modalNode = document.getElementById("modal");
 
-const Modal = ({ visible, close = true, children }) => {
-  const [wrapper, setWrapper] = useState(document.createElement("div"));
-  const [open, setOpen] = useState(true);
-  modalNode.appendChild(wrapper);
+const Modal = ({
+  visible = false,
+  onClose = () => false,
+  avoidClose = false,
+  children
+}) => {
+  const [wrapper] = useState(document.createElement("div"));
+  wrapper.classList.add("modal");
   useEffect(() => {
-    if (visible && open) {
-    }
+    modalNode.appendChild(wrapper);
     return () => modalNode.removeChild(wrapper);
   }, [visible]);
-  return visible && open
+  return visible
     ? ReactDOM.createPortal(
-        <div>
-          <div className="background" onClick={() => setOpen(false)} />
-          <div className="modal">
-            {close && (
-              <button className="modal__close" onClick={() => setOpen(false)}>
-                &times;
-              </button>
-            )}
+        <>
+          <div
+            className="modal__background"
+            onClick={() => !avoidClose && onClose()}
+          ></div>
+          <div className="modal__container">
+            <span
+              className="modal__close"
+              onClick={() => !avoidClose && onClose()}
+            >
+              &times;
+            </span>
             {children}
           </div>
-        </div>,
+        </>,
         wrapper
       )
     : null;

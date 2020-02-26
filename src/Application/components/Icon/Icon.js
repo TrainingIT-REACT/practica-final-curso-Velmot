@@ -9,6 +9,7 @@ const getIconDefinition = lookup => findIconDefinition(lookup);
 
 const Icon = props => (
   <FontAwesomeIcon
+    className="icon"
     icon={compose(
       getIconDefinition,
       merge(defaultLookup),

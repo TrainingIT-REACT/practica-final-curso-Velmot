@@ -5,7 +5,7 @@ import Icon from "../Icon";
 import "./css/Menu.css";
 
 const menus = [
-  { icon: "home", title: "Inicio", path: "/" },
+  { icon: "home", title: "Inicio", path: "/", exact: true },
   { icon: "book", title: "Biblioteca", path: "/library", exact: true }
 ];
 
@@ -14,8 +14,14 @@ const Menu = () => (
     <ul>
       {menus.map((m, i) => (
         <li key={i}>
-          <NavLink {...m.exact} to={m.path} activeClassName="active">
-            <span className="menu__icon">{m.icon && <Icon name={m.icon} />}</span>
+          <NavLink
+            exact={m.exact || false}
+            to={m.path}
+            activeClassName="active"
+          >
+            <span className="menu__icon">
+              {m.icon && <Icon name={m.icon} />}
+            </span>
             <span>{m.title}</span>
           </NavLink>
         </li>

@@ -5,7 +5,7 @@ const SearchPage = ({ match }) => {
   const [songs, setSongs] = useState([]);
   useEffect(() => {
     const fetchSongs = async () => {
-      //Fake fetch with delay
+      //Fake delay
       await setTimeout(
         () =>
           fetch(`/songs?name_like=${match.params.query}`)
@@ -18,7 +18,7 @@ const SearchPage = ({ match }) => {
     fetchSongs();
   }, [match.params.query]);
   return (
-    <div>
+    <div className="search">
       <SongList data={songs} mode="cover" />
     </div>
   );

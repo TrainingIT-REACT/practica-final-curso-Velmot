@@ -1,0 +1,16 @@
+.user-box {
+    position: relative;
+    padding-right: 40px;
+  }
+  
+  .user-box__user {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+  }
+  
+  .user-box__logout {
+    margin-left: 5px;
+  }
+  
