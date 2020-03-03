@@ -3,6 +3,7 @@
 }
 
 .search-box__input {
+  display: inline-flex;
   margin-left: 40px;
   position: absolute;
   top: 50%;

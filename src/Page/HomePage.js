@@ -1,13 +1,19 @@
 import React from "react";
-import SongList, { MODE } from "../Song/List";
+import { connect } from "react-redux";
+import SongList, { MODE } from "../Application/components/Song/List";
+import { getRecent } from "../Application/components/Player/reducers/player";
 
-const HomePage = () => (
-  <div className="home">
+const HomePage = ({ recent }) => (
+  <div className="home-page">
     <div className="home__recent">
       <div className="home__recent-title">Escuchadas recientemente</div>
-      <SongList data={[]} mode={MODE.COVER} />
+      <SongList data={recent} mode={MODE.COVER} />
     </div>
   </div>
 );
 
-export default HomePage;
+const mapStateToProps = state => ({
+  recent: getRecent(state)
+});
+
+export default connect(mapStateToProps)(HomePage);

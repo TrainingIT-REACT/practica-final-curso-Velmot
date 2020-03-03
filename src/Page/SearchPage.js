@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SongList from "../Song/List";
+import SongList from "../Application/components/Song/List";
 
 const SearchPage = ({ match }) => {
   const [songs, setSongs] = useState([]);

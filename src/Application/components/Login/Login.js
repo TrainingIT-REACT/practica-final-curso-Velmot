@@ -1,27 +1,35 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
+import { connect } from "react-redux";
 import UserContext from "./UserContext";
 import Modal from "../Modal/Modal";
+import { logIn } from "./actions";
 
-const Login = () => {
+const Login = ({ logIn, logOut }) => {
   const [viewModal, showModal] = useState(true);
   const userContext = useContext(UserContext);
+  const inputRef = useRef();
+
   const submit = e => {
     console.log(e);
+    e.preventDefault();
+    logIn(inputRef.current.value);
     userContext.updateUser(true);
   };
   return (
     <div className="login">
       <Modal visible={viewModal} onClose={() => showModal(false)} avoidClose>
-        <form>
-          <input type="text" placeholder="Usuario" />
+        <form onSubmit={submit}>
+          <input type="text" ref={inputRef} placeholder="Usuario" />
           <input type="password" placeholder="Contraseña" />
-          <button type="submit" onClick={submit}>
-            Log In
-          </button>
+          <button type="submit">Log In</button>
         </form>
       </Modal>
     </div>
   );
 };
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+  logIn: (...params) => dispatch(logIn(params))
+});
+
+export default connect(null, mapDispatchToProps)(Login);
