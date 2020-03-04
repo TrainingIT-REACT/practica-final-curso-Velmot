@@ -1,0 +1,23 @@
+.album__header {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+}
+
+.album__cover {
+  margin-right: 20px;
+}
+
+.album__cover img {
+  width: 200px;
+}
+
+.album__title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.album__artist {
+  font-size: 1.1rem;
+  color: #9a9a9a;
+}

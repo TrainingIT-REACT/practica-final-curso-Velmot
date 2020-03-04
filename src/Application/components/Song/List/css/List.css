@@ -1,0 +1,25 @@
+.song-list {
+  width: 60%;
+}
+
+.song-list__item:first-child {
+  border-top: 1px solid #404040;
+}
+
+.song-list__item {
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #404040;
+}
+
+.song-list__item-title {
+  margin-left: 10px;
+}
+
+.song-list__item-duration {
+  flex: 1;
+  text-align: right;
+}
