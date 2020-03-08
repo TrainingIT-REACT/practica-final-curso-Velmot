@@ -20,6 +20,10 @@
   border-radius: 2px;
 }
 
+.timer__progress {
+  transition: width 2s;
+}
+
 .timer__time {
   margin-right: 5px;
 }

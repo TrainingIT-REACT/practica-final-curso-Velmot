@@ -10,10 +10,12 @@ const Timer = ({ song, playing, duration = 0, barWidth = 500 }) => {
   const [time, setTime] = useState(0);
   const [interval, setTimeInterval] = useState(0);
   useEffect(() => {
-    if (song)
-      setTimeInterval(setInterval(() => playing && setTime(song.currentTime), 1000));
+    if (song && playing)
+      setTimeInterval(
+        setInterval(() => setTime(song.currentTime), 500)
+      );
     else clearInterval(interval);
-  }, [song]);
+  }, [song, playing]);
   return (
     <div className="timer">
       <div className="timer__time">

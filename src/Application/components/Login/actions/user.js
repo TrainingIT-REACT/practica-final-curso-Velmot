@@ -1,5 +1,5 @@
 export const USER_LOG_IN = "USER_LOG_IN";
-export const logIn = ({ user }) => ({
+export const logIn = user => ({
   type: USER_LOG_IN,
   user
 });

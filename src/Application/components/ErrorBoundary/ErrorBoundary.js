@@ -31,7 +31,7 @@ class ErrorBoundary extends React.Component {
     return this.state.error ? (
       <div>
         <h1>{this.props.message}</h1>
-        <button onClick={this.onClick}>Volver a Inivio</button>
+        <button onClick={this.onClick}>Volver a Inicio</button>
       </div>
     ) : (
       this.props.children

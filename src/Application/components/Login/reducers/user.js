@@ -1,16 +1,21 @@
+
 import { USER_LOG_IN, USER_LOG_OUT } from "../actions";
 
 const initialState = {
   login: {
-    user: "Velmot"
+    user: {
+      loggedIn: false,
+      user: ""
+    }
   }
 };
 
-const user = (state = initialState.login, { type, user }) => {
+const user = (state = initialState.login.user, { type, user }) => {
   switch (type) {
     case USER_LOG_IN:
       return {
         ...state,
+        loggedIn: true,
         user
       };
     case USER_LOG_OUT:

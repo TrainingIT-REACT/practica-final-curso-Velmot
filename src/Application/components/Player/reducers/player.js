@@ -10,16 +10,23 @@ const initialState = {
 };
 
 const player = (state = initialState.player, { type, song, list, action }) => {
+  const setRecent = song => {
+    const isRecentSong = state.recent.find(s => s.id === song.id);
+    return isRecentSong ? [...state.recent] : [...state.recent.slice(-4), song];
+  };
   switch (type) {
     case PLAYER_PLAY_SONG:
       return {
         ...state,
         song,
         list,
-        recent: [...state.recent.slice(-4), song]
+        recent: setRecent(song)
       };
     case PLAYER_NEXT_SONG: {
-      const currentSong = useWith(find, [prop("id"), identity])(song, list);
+      const currentSong = useWith(find, [prop("id"), identity])(
+        state.song,
+        state.list
+      );
       const currentSongIndex = compose(values, pickAll)(currentSong);
       const songIndex =
         (currentSongIndex < 0 ? state.list.lenth - 1 : currentSongIndex) +

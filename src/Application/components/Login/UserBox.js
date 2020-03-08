@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import UserContext from "./UserContext";
 import Icon from "../Icon";
 import { getUser } from "./reducers/user";
 import { logOut } from "../Login/actions";
@@ -8,19 +7,17 @@ import { logOut } from "../Login/actions";
 import "./css/UserBox.css";
 
 const UserBox = ({ user, logOut }) => {
-  const userContext = useContext(UserContext);
   const onLogOut = () => {
     logOut();
-    userContext.updateUser(false);
   };
   return (
     <div className="user-box">
-      {userContext.loggedIn ? (
+      {!user.loggedIn ? (
         "Not logged"
       ) : (
         <>
           <div className="user-box__user">
-            <span>{user}</span>
+            <span>{user.user}</span>
             <div className="user-box__logout" onClick={onLogOut}>
               <Icon name="sign-out-alt" />
             </div>
