@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Icon from "../Icon";
+import Icon from "Components/Icon";
 import { getUser } from "./reducers/user";
 import { logOut } from "Components/Login/actions";
 
