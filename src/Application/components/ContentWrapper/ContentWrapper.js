@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { HomePage, AlbumPage, LibraryPage, SearchPage } from "../../../Page";
+import { HomePage, AlbumPage, LibraryPage, SearchPage } from "@/Page";
 
 const NotFound = () => <p>¡Oops, aquí no hay música!</p>;
 

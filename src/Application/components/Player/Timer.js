@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { formatSongDuration } from "../utils";
+import { formatSongDuration } from "Components/utils";
 
 import "./css/Timer.css";
 

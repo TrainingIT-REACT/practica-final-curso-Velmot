@@ -1,6 +1,6 @@
 import React from "react";
-import Icon from "../../../Icon";
-import { formatSongDuration } from "../../../utils";
+import Icon from "Components/Icon";
+import { formatSongDuration } from "Components/utils";
 
 import "../css/List.css";
 

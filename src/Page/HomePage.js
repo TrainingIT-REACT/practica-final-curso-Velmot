@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import SongList, { MODE } from "../Application/components/Song/List";
-import { getRecent } from "../Application/components/Player/reducers/player";
-import Loader from "../Application/components/Loader";
+import SongList, { MODE } from "Components/Song/List";
+import { getRecent } from "Components/Player/reducers/player";
+import Loader from "Components/Loader";
 
 import "./css/HomePage.css";
 

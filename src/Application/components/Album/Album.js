@@ -1,6 +1,6 @@
 import React from "react";
-import SongList from "../Song/List";
-import Loader from "../Loader";
+import SongList from "Components/Song/List";
+import Loader from "Components/Loader";
 
 import "./css/Album.css";
 

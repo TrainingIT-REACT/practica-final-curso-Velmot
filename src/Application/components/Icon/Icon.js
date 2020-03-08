@@ -2,7 +2,7 @@ import React from "react";
 import { compose, merge, pick, omit } from "ramda";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { findIconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { renameKeys } from "../utils";
+import { renameKeys } from "Components/utils";
 
 const defaultLookup = { prefix: "fas" };
 const getIconDefinition = lookup => findIconDefinition(lookup);

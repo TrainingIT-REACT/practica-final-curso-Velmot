@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Album from "../Application/components/Album";
+import Album from "Components/Album";
 
 const AlbumPage = ({ match }) => {
   const [album, setAlbum] = useState({});

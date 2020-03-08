@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation, useHistory } from "react-router-dom";
-import Icon from "../Icon";
+import Icon from "Components/Icon";
 
 import "./css/SearchBox.css";
 

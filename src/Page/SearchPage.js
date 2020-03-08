@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import SongList from "../Application/components/Song/List";
+import SongList from "Components/Song/List";
+import Loader from "Components/Loader";
 
 const SearchPage = ({ match }) => {
   const [songs, setSongs] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchSongs = async () => {
       //Fake delay
@@ -11,6 +13,7 @@ const SearchPage = ({ match }) => {
           fetch(`/songs?name_like=${match.params.query}`)
             .then(res => res.json())
             .then(setSongs)
+            .then(() => setLoading(false))
             .catch(err => console.error("Error accediendo al servidor", err)),
         2000
       );
@@ -19,7 +22,7 @@ const SearchPage = ({ match }) => {
   }, [match.params.query]);
   return (
     <div className="search">
-      <SongList data={songs} mode="cover" />
+      {loading ? <Loader /> : <SongList data={songs} mode="cover" />}
     </div>
   );
 };

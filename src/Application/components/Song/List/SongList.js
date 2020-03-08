@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { List, Cover } from "./mode";
-import { playSong } from "../../Player/actions";
+import { playSong } from "Components/Player/actions";
 
 export const MODE = {
   LIST: "list",

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Icon from "../Icon";
 import { getUser } from "./reducers/user";
-import { logOut } from "../Login/actions";
+import { logOut } from "Components/Login/actions";
 
 import "./css/UserBox.css";
 

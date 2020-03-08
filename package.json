@@ -12,15 +12,14 @@
     "react-dom": "^16.8.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "2.1.3",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8"
   },
   "scripts": {
     "start": "npm-run-all --parallel client server",
-    "client": "react-scripts start",
+    "client": "webpack-dev-server",
     "server": "json-server --watch server/data.json --static server/static --port 3001",
-    "build": "react-scripts build",
+    "build": "webpack --env prod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,12 +33,22 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^25.1.0",
     "jest-enzyme": "^7.1.2",
     "json-server": "^0.14.2",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "proxy": "http://localhost:3001"
 }

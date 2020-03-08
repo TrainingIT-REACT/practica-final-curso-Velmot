@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
-import Login, { UserBox } from "../Login";
-import ContentWrapper from "../ContentWrapper";
-import Player from "../Player";
-import Menu from "../Menu";
-import SearchBox from "../Search";
-import ErrorBoundary from "../ErrorBoundary";
-import { getUser } from "../Login/reducers/user";
+import Login, { UserBox } from "Components/Login";
+import ContentWrapper from "Components/ContentWrapper";
+import Player from "Components/Player";
+import Menu from "Components/Menu";
+import SearchBox from "Components/Search";
+import ErrorBoundary from "Components/ErrorBoundary";
+import { getUser } from "Components/Login/reducers/user";
 
 import "./css/MainLayout.css";
 

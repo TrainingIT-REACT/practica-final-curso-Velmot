@@ -4,7 +4,7 @@ import cn from "classnames";
 import { isEmpty } from "ramda";
 import { getSong } from "./reducers/player";
 import { nextSong } from "./actions";
-import Icon from "../Icon";
+import Icon from "Components/Icon";
 import Timer from "./Timer";
 
 import "./css/Player.css";

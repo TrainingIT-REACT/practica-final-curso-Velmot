@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SongList from "../Application/components/Song/List";
-import Loader from "../Application/components/Loader";
+import SongList from "Components/Song/List";
+import Loader from "Components/Loader";
 
 const LibraryPage = () => {
   const [loading, setLoading] = useState(true);
